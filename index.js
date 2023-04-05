@@ -3,7 +3,7 @@ const app = express();
 const body = require("body-parser");
 const helmet = require('helmet');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(body.urlencoded({ extended: true }));
@@ -61,6 +61,6 @@ app.post("/", (req, res) => {
 });
 
 
-app.listen(process.env.port||port, () => {
+app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
