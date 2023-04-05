@@ -8,13 +8,6 @@ app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(body.urlencoded({ extended: true }));
 
-app.use(helmet.contentSecurityPolicy({
-  directives: {
-    defaultSrc: ["'none'"],
-    styleSrc: ["'self'", 'https://fonts.googleapis.com']
-  }
-}));
-
 var items = ["buy food", "cook food", "eat food"];
 let workItems = [];
 let hobbies =[];
